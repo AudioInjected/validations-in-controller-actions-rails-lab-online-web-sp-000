@@ -9,9 +9,9 @@ class PostsController < ApplicationController
 
   def update
     @post.update(post_params)
-    @post.valid? ? 
+    @post.valid? ? redirect_to(post_path(@post)) : render(:edit)
 
-    redirect_to post_path(@post)
+    
   end
 
   private
